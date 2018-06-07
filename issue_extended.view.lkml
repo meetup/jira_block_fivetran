@@ -19,6 +19,7 @@ explore: issue_extended {}
 view: issue_extended {
   derived_table: {
     datagroup_trigger: fivetran_datagroup
+    distribution_style: all
     sql: SELECT issue.*
                -- Include the values associated with foreign keys
                -- in the issue table
@@ -105,7 +106,7 @@ view: issue_extended {
 
         ;;
 
-    indexes: ["id"]
+#     indexes: ["id"]
   }
 
   dimension: id {

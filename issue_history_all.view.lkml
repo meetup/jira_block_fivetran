@@ -11,6 +11,7 @@
 view: issue_history_all {
   derived_table: {
     datagroup_trigger: fivetran_datagroup
+    distribution_style: all
     sql: -- History tables for single value fields
       select ph."issue_id", ph."time", p."name", 'Project' as "changed" from jira.issue_project_history ph
       LEFT OUTER JOIN jira.project p on ph.project_id = p.id
