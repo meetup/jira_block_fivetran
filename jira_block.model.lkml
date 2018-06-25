@@ -63,6 +63,19 @@ explore: issue_history_2 {
     sql_on: ${issue.id} = ${issue_history_all.issue_id} ;;
     relationship: many_to_one
   }
+
+  join: issue_extended {
+    type:  left_outer
+    sql_on: ${issue.id} = ${issue_extended.id} ;;
+    relationship: many_to_one
+  }
+
+  join: priority {
+    view_label: "Issue"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${issue.priority} = ${priority.id} ;;
+  }
 }
 
 ### CURRENT OVERVIEW OF STATUS OF PROJECTS, ISSUES, AND ISSUE FACTS (E.G. # OF COMMENTS)

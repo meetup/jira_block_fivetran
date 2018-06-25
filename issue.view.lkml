@@ -105,7 +105,7 @@ view: issue {
 
   dimension: priority {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.priority ;;
   }
 
